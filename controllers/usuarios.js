@@ -4,13 +4,26 @@ const bcryptjs = require('bcryptjs');
 const Usuario = require('../models/usuario');
 
 
-const usuariosGet = (req, res=response) => {
+const usuariosGet = async (req=request, res=response) => {
 
-    const { q, otro} = req.query;
+    const { limite=5,desde = 0} = req.query;
+    const query = {estado:true}
+    
+    
+ //   const usuarios = await 
+//    const total = await 
+
+
+    const [ total, usuarios ] = await Promise.all([
+
+        Usuario.countDocuments(query),
+        Usuario.find(query)
+        .skip(Number(desde))
+        .limit(Number(limite))
+    ])
     res.json({
-        msg:'get API - controlador',
-        q,
-        otro
+        total,
+        usuarios
     })
 }  
 
@@ -28,7 +41,7 @@ const usuariosPost = async (req, res) => {
     await usuario.save();
     
     res.json({
-        msg:'post API - controlador',
+        
         usuario
         
     })
@@ -49,7 +62,7 @@ const usuariosPut = async (req, res) => {
     const usuario = await Usuario.findByIdAndUpdate(id, resto);
 
     res.json({
-        msg:'put API - controlador',
+       
         usuario
     })
 }
@@ -60,9 +73,17 @@ const usuariosPatch = (req, res) => {
     })
 }
 
-const usuariosDelete = (req, res) => {
+const usuariosDelete = async (req, res) => {
+
+    const { id } = req.params;
+
+    //DELETE REAL DE LA BD
+    //const usuario = await Usuario.findByIdAndRemove( id );
+
+    const usuario = await Usuario.findByIdAndUpdate(id, { estado : false })
+
     res.json({
-        msg:'delete API - controlador'
+        usuario    
     })
 }
 
