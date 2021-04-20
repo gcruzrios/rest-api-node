@@ -1,0 +1,82 @@
+[
+  {
+
+    "nombre": "Leanne Graham",
+    "username": "Bret",
+    "correo": "Sincere@april.biz",
+    "password":"123456",
+    "rol":"USER_ROLE"
+  },
+  {
+
+    "nombre": "Ervin Howell",
+    "username": "Antonette",
+    "correo": "Shanna@melissa.tv",
+    "password":"123456",
+    "rol":"USER_ROLE"
+  },
+  {
+
+    "nombre": "Clementine Bauch",
+    "username": "Samantha",
+    "correo": "Nathan@yesenia.net",
+    "password":"123456",
+    "rol":"USER_ROLE"
+  },
+  {
+
+    "nombre": "Patricia Lebsack",
+    "username": "Karianne",
+    "correo": "Julianne.OConner@kory.org",
+    "password":"123456",
+    "rol":"USER_ROLE"
+  },
+  {
+
+    "nombre": "Chelsey Dietrich",
+    "username": "Kamren",
+    "correo": "Lucio_Hettinger@annie.ca",
+    "password":"123456",
+    "rol":"USER_ROLE"
+  },
+  {
+
+    "nombre": "Mrs. Dennis Schulist",
+    "username": "Leopoldo_Corkery",
+    "correo": "Karley_Dach@jasper.info",
+    "password":"123456",
+    "rol":"USER_ROLE"
+  },
+  {
+
+    "nombre": "Kurtis Weissnat",
+    "username": "Elwyn.Skiles",
+    "correo": "Telly.Hoeger@billy.biz",
+    "password":"123456",
+    "rol":"USER_ROLE"
+  },
+  {
+
+    "nombre": "Nicholas Runolfsdottir V",
+    "username": "Maxime_Nienow",
+    "correo": "Sherwood@rosamond.me",
+    "password":"123456",
+    "rol":"USER_ROLE"
+  },
+  {
+
+    "nombre": "Glenna Reichert",
+    "username": "Delphine",
+    "correo": "Chaim_McDermott@dana.io",
+    "password":"123456",
+    "rol":"USER_ROLE"
+  },
+  {
+    
+    "nombre": "Clementina DuBuque",
+    "username": "Moriah.Stanton",
+    "correo": "Rey.Padberg@karina.biz",
+    "password":"123456",
+    "rol":"USER_ROLE"
+  }
+]
