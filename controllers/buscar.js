@@ -12,9 +12,9 @@ const coleccionesPermitidas = [
 
 const buscarUsuarios = async( termino = '', res = response ) => {
 
-    const esMongoID = ObjectId.isValid( termino ); // TRUE 
+    const esMongoId = ObjectId.isValid( termino ); // TRUE 
 
-    if ( esMongoID ) {
+    if ( esMongoId ) {
         const usuario = await Usuario.findById(termino);
         return res.json({
             results: ( usuario ) ? [ usuario ] : []
@@ -35,9 +35,9 @@ const buscarUsuarios = async( termino = '', res = response ) => {
 
 const buscarCategorias = async( termino = '', res = response ) => {
 
-    const esMongoID = ObjectId.isValid( termino ); // TRUE 
+    const esMongoId = ObjectId.isValid( termino ); // TRUE 
 
-    if ( esMongoID ) {
+    if ( esMongoId ) {
         const categoria = await Categoria.findById(termino);
         return res.json({
             results: ( categoria ) ? [ categoria ] : []
@@ -55,9 +55,9 @@ const buscarCategorias = async( termino = '', res = response ) => {
 
 const buscarProductos = async( termino = '', res = response ) => {
 
-    const esMongoID = ObjectId.isValid( termino ); // TRUE 
+    const esMongoId = ObjectId.isValid( termino ); // TRUE 
 
-    if ( esMongoID ) {
+    if ( esMongoId ) {
         const producto = await Producto.findById(termino)
                             .populate('categoria','nombre');
         return res.json({
