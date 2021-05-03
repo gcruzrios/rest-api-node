@@ -1,6 +1,7 @@
 node_modules/
 
-.env 
+#Archivos .env (Archivos de variables de entorno
+#.env 
 
 uploads/productos/**.*
 uploads/usuarios/**.*

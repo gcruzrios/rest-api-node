@@ -15,15 +15,27 @@ const usuariosGet = async (req=request, res=response) => {
 
 
     const [ total, usuarios ] = await Promise.all([
-
-        Usuario.countDocuments(query),
-        Usuario.find(query)
-        .skip(Number(desde))
-        .limit(Number(limite))
+        Usuario.find()
+        // Usuario.countDocuments(query),
+        // Usuario.find(query)
+        // .skip(Number(desde))
+        // .limit(Number(limite))
     ])
     res.json({
         total,
         usuarios
+    })
+}  
+
+const usuarioGet = async (req=request, res=response) => {
+
+     id = req.params.id;
+ 
+
+    const usuario = await Usuario.findById(id)
+
+    res.json({
+        usuario
     })
 }  
 
@@ -80,9 +92,10 @@ const usuariosDelete = async (req, res) => {
     //const uid = req.uid;
 
     //DELETE REAL DE LA BD
-    //const usuario = await Usuario.findByIdAndRemove( id );
+    const usuario = await Usuario.findByIdAndRemove( id );
 
-    const usuario = await Usuario.findByIdAndUpdate(id, { estado : false })
+    //DELETE FALSO solo cambia estado
+    //const usuario = await Usuario.findByIdAndUpdate(id, { estado : false })
     // const usuarioAutenticado = req.usuario;
 
     res.json({
@@ -91,5 +104,5 @@ const usuariosDelete = async (req, res) => {
 }
 
 module.exports = {
-    usuariosGet, usuariosPost, usuariosPut, usuariosPatch, usuariosDelete
+    usuariosGet, usuarioGet, usuariosPost, usuariosPut, usuariosPatch, usuariosDelete
 }
