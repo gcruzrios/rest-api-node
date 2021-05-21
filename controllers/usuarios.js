@@ -11,7 +11,7 @@ const usuariosGet = async (req=request, res=response) => {
     
     
  //   const usuarios = await 
-//    const total = await 
+ //    const total = await 
 
 
     const [ total, usuarios ] = await Promise.all([
